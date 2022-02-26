@@ -7,7 +7,7 @@ pipeline {
         terraform 'terraform'
     }
     stages { 
-	    stage('checkout-SCM) {
+	    stage('checkout-SCM') {
 		  steps{ 
                	     git 'https://github.com/rajkumar2289/maven-archetype-webapp.git' 
             	 }
