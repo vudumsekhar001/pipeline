@@ -19,7 +19,7 @@ pipeline {
 		      }
 	    }
 		  
-	    stage('build stage') { 
+	    stage('Maven-Build') { 
 		    steps{
 			     mvn test
 		    }
