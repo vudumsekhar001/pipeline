@@ -4,7 +4,7 @@ pipeline {
     stages { 
 	    stage('checkout-SCM') {
 		  steps{ 
-               	     git 'https://github.com/rajkumar2289/maven-archetype-webapp.git' 
+               	     git 'https://github.com/vudumsekhar001/pipeline.git' 
             	 }
             }
 	    stage('list scm')
