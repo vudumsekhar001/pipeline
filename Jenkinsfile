@@ -6,7 +6,7 @@ pipeline {
                	     git 'https://github.com/vudumsekhar001/pipeline.git' 
             	 }
             }
-	    stage('list scM')
+	    stage('list scm')
 	    {
 		      steps{
 		 	 sh 'ls -l'
