@@ -17,22 +17,25 @@ pipeline {
 			    sh  'mvn clean package'
 		    }
         }		  
-	    stage('test stage') { 
+	    stage('artifact-upaload') { 
 		    steps{
-			    sh  'mvn test'
-		    }
-		     
+			 nexusArtifactUploader artifacts: [
+				 [
+					 artifactId: 'simplewebapp',
+					 classifier: '',
+					 file: '/var/lib/jenkins/workspace/webapp-demo/target/simplewebapp.war',
+					 type: 'war'
+				 ]
+			 ], 
+				 credentialsId: 'NEXUS_CRED',
+				 groupId: 'com.sekhar',
+				 nexusUrl: '13.58.3.193:8081',
+				 nexusVersion: 'nexus3',
+				 protocol: 'http',
+				 repository: 'Maven-repo',
+				 version: '1.0'  
+			    
+		    }     
 	    }
-
-	    stage('build stage') { 
-		    steps {
-			    sh  'mvn package'
-		    }
-        }
-	    stage('install stage') { 
-		    steps {
-			    sh  'mvn install'
-		    }
-        }
     }
 }
