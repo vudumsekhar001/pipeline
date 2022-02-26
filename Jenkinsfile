@@ -12,7 +12,11 @@ pipeline {
 		 	 sh 'ls -l'
 		      }
 	    }
-		  
+           stage('build stage') { 
+		    steps {
+			    sh  'mvn clean package'
+		    }
+        }		  
 	    stage('Maven-Build') { 
 		    steps{
 			    sh  'mvn test'
@@ -22,7 +26,12 @@ pipeline {
 
 	    stage('build stage') { 
 		    steps {
-			    sh  'mvn clean package'
+			    sh  'mvn package'
+		    }
+        }
+	    stage('build stage') { 
+		    steps {
+			    sh  'mvn install'
 		    }
         }
     }
