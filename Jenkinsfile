@@ -1,11 +1,6 @@
 pipeline { 
     agent any  
-	tools {
-        jdk 'jdk'
-        git 'git'
-        maven 'maven'
-        terraform 'terraform'
-    }
+
     stages { 
 	    stage('checkout-SCM') {
 		  steps{ 
