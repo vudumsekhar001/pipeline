@@ -21,14 +21,14 @@ pipeline {
 		  
 	    stage('Maven-Build') { 
 		    steps{
-			     mvn test
+			    sh  'mvn test'
 		    }
 		     
 	    }
 
 	    stage('build stage') { 
 		    steps {
-			     mvn clean package
+			    sh  'mvn clean package'
 		    }
         }
     }
